@@ -1,0 +1,70 @@
+/* ************************ */
+/* BELOW 575.98px: X-Small devices (portrait phones, */
+/* ************************ */
+@media (max-width: 35.999em) {
+  .banner {
+    height: 90vh;
+  }
+
+  .banner-text h1 {
+    font-size: 4.2rem;
+  }
+
+  .banner-img-box::before {
+    background-size: 200rem;
+  }
+
+  .navbar-list {
+    height: 16rem;
+  }
+
+  .navbar-item:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+
+  /* Job info section */
+
+  .job-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+  }
+
+  .job-infos > div {
+    margin-bottom: 0;
+  }
+
+  /* Certification section */
+  .certificates .col:nth-child(odd) .cer-box {
+    padding-right: 0;
+  }
+
+  .certificates .col:nth-child(even) .cer-box {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .certificates .col:nth-child(odd):nth-last-child(2) {
+    border-bottom: 2px solid #d6c08d;
+    padding-bottom: 3.6rem;
+  }
+
+  /* Project section */
+
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: start;
+  }
+
+  /* footer */
+
+  .social-link-text {
+    display: none;
+  }
+
+  .footer .my-container {
+    gap: 0.8rem;
+  }
+}

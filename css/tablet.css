@@ -1,0 +1,123 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/* ************************ */
+/* BELOW 991.98px Medium devices (tablets)  */
+/* ************************ */
+@media (max-width: 61.999em) {
+  .avatar-img-box {
+    width: 4.8rem;
+  }
+
+  .avatar-img {
+    display: none;
+  }
+
+  .navbar-item:nth-child(2) {
+    border-right: 2px solid #f4f4f4;
+  }
+
+  .navbar-item:nth-child(4) {
+    border-left: 2px solid #f4f4f4;
+  }
+
+  /* Job info section */
+
+  .job-infos {
+    display: block;
+    column-count: 2;
+    column-gap: 3.6rem;
+  }
+
+  .job-infos > div {
+    break-inside: avoid;
+    margin-bottom: 3.6rem;
+  }
+
+  .activity {
+    break-before: column;
+  }
+
+  /* Certificate section */
+  .cer-box {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  /* Project section */
+
+  .project-info {
+    grid-template-columns: auto auto;
+    gap: 1rem;
+  }
+
+  .project-info-role {
+    grid-column: 2;
+  }
+
+  /* ****************************** */
+  /* CHARTER PAGE */
+  /* ****************************** */
+
+  /* Goals */
+  .goal-list-item,
+  .team-list-item,
+  .primary-list-item,
+  .timeline-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.8rem;
+  }
+
+  .goal-list-item i,
+  .team-list-item i,
+  .primary-list-item i {
+    align-self: center;
+
+    /* use only for .goal-list-item */
+    margin-left: 0;
+  }
+
+  .goal-list-item {
+    margin-left: 0;
+  }
+  .goal-list-item div {
+    margin-left: 1.6rem;
+  }
+
+  /* Team */
+
+  .team-list-item {
+    margin-left: 1.6rem;
+  }
+
+  /* Primary */
+
+  .primary-list-item {
+    margin-left: 1.6rem;
+  }
+
+  /* Timeline */
+
+  .timeline-list-item {
+    margin-left: 1.6rem;
+  }
+}
+
+/* ************************ */
+/* BELOW 767.98px:  Small devices (landscape phones...) */
+/* ************************ */
+
+@media (max-width: 47.999em) {
+  .avatar-img-box {
+    width: 3.6rem;
+  }
+
+  .navbar-list {
+    height: 4.8rem;
+  }
+
+  .navbar-item {
+    padding: 0 2.4rem;
+  }
+}

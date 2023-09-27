@@ -1,0 +1,750 @@
+/*
+--->> 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Medium: 1.3
+Paragraph default: 1.6
+Large: 1.9
+
+- Letter spacing
+  -1px
+  -1.2px
+
+--->> 02 COLORS
+
+- Primary: 
+#199cdb
+
+- Tints: 
+#47b0e2 
+#5ebae6 
+
+- Shades: 
+
+- Accents: 
+#d6c08d
+
+- Greys
+#343434
+#4a4a4a
+#636363
+#7c7c7c
+#adadad
+#c6c6c6
+#dedede
+#f4f4f4
+#f7f7f7
+
+
+
+--->> 05 SHADOWS
+
+0 0 8px rgba(0, 0, 0, 0.08);
+
+--->> 06 BORDER-RADIUS
+
+Default: 8px
+Medium: 12px
+
+--->> 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  /* 10px / 16px = 62.5% */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #636363;
+  line-height: 1;
+  font-size: 1.4rem;
+}
+
+ul,
+ol,
+p {
+  /* Override pre-defined styles of Bootsrap */
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* ============================*/
+/* COMMON STYLING */
+/* ============================*/
+
+.bg-grey-1 {
+  background-color: #f7f7f7;
+}
+
+.bg-grey-2 {
+  background-color: #f4f4f4;
+}
+
+.border--1 {
+  border: 2px solid #dedede;
+}
+
+.my-container {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  color: #343434;
+}
+
+/* ============================*/
+/* BANNER */
+/* ============================*/
+
+.banner {
+  position: relative;
+  height: 60vh;
+}
+
+.banner-img-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(33, 33, 33, 0.6),
+      rgba(33, 33, 33, 0.6)
+    ),
+    url(../images/banner.jpg);
+  background-size: cover;
+  background-position-x: center;
+}
+
+/* positioning for banner text */
+.banner-text {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-text h1 {
+  font-size: 5.2rem;
+  font-weight: 400;
+  color: #f7f7f7;
+  letter-spacing: -1.2px;
+  margin-bottom: 0.8rem;
+}
+
+.banner-text span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #c6c6c6;
+}
+
+/* ============================*/
+/* NAVIGATION BAR */
+/* ============================*/
+
+.navbar-list {
+  height: 6.4rem;
+  list-style: none;
+  position: relative;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+  padding: 0 2.4rem;
+}
+
+.navbar-link i {
+  color: #47b0e2;
+  margin-right: 0.4rem;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  font-size: 1.4rem;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:hover i {
+  color: #5ebae6;
+}
+
+.avatar-img-box {
+  width: 24rem;
+}
+
+/* Make border for a elements */
+.navbar-item:nth-child(1),
+.navbar-item:nth-child(2) {
+  border-left: 2px solid #f4f4f4;
+}
+
+.navbar-item:nth-child(4),
+.navbar-item:nth-child(5) {
+  border-right: 2px solid #f4f4f4;
+}
+
+.avatar-img {
+  max-width: 14.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+  border: 0.8rem solid #fff;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.08);
+}
+
+/* ============================*/
+/*  ABOUT SECTION*/
+/* ============================*/
+
+.about-section {
+  line-height: 1.9;
+  font-size: 1.4rem;
+}
+
+.about-target,
+.about-info {
+  padding: 6.4rem 3.6rem !important;
+}
+
+.about-info ul {
+  list-style: none;
+}
+
+.about-info span {
+  font-weight: 500;
+}
+
+.social-icon i {
+  font-size: 1.4rem;
+  color: #199cdb;
+  margin-right: 0.4rem;
+}
+
+/* ============================*/
+/* JOB INFO SECTION */
+/* ============================*/
+
+.job-info-section {
+  padding: 6.4rem 0;
+}
+
+/* Layout "job-infos" into 6 boxes  */
+
+.job-infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3.6rem;
+}
+
+.education {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.activity {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.hobby {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.skill {
+  grid-column: 3;
+}
+
+.language {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Layout for every box */
+.experience,
+.education,
+.activity,
+.hobby,
+.language,
+.skill {
+  display: grid;
+  grid-template-columns: 0.75fr 0.25fr;
+  grid-template-rows: auto 1fr;
+
+  row-gap: 4.8rem;
+  column-gap: 0.8rem;
+}
+
+.job-info-section .content {
+  grid-column: 1/-1;
+}
+
+.job-info-section h2 {
+  margin-bottom: 0;
+  align-self: end;
+}
+
+.job-info-section .title-icon {
+  align-self: end;
+  justify-self: center;
+  font-size: 4.4rem;
+  color: #adadad;
+}
+
+/* ---EXPERIENCE  & EDUCATION & ACTIVITY  */
+
+.experience .content,
+.education .content,
+.activity .content {
+  margin-left: 1.6rem;
+}
+
+.content .text {
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+
+.content .text:last-child {
+  margin-bottom: 0;
+}
+
+.point-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #4a4a4a;
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.point-title::before {
+  /* make bullet points for point titles */
+  content: "●";
+  font-size: 2rem;
+  color: #199cdb;
+  position: absolute;
+  left: -2.4rem;
+}
+
+.year {
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+/* styling for year - "present" color block */
+.experience .year span {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #199cdb;
+  color: #f4f4f4;
+  border-radius: 0.8rem;
+}
+
+/* ---HOBBY */
+
+.hobby .content {
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.hobby .content i {
+  font-size: 1.8rem;
+  color: #199cdb;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  border: 1px solid #199cdb;
+
+  /* using flex to make icon align centered in a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.2rem;
+}
+
+/* using flex to layout for each hobby group = (1 icon + 1 text) */
+.hobby .hobby-group {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+/* ---LANGUAGE & SKILL */
+.language span,
+.skill span {
+  background: #c6c6c6;
+  display: inline-block;
+  height: 0.2rem;
+  width: 4.5rem;
+  margin-right: 1rem;
+
+  margin-bottom: 2.4rem;
+}
+
+.language p,
+.skill p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 1.6rem;
+}
+
+.language .level-1 {
+  background: #199cdb;
+}
+
+.level-skill-htmlcss .level-1,
+.level-skill-nodejs .level-1 {
+  background: #199cdb;
+}
+
+.level-skill-js .level-1,
+.level-skill-js .level-2,
+.level-skill-react .level-1,
+.level-skill-react .level-2 {
+  background: #199cdb;
+}
+
+/* ============================*/
+/* CERTIFICATE */
+/* ============================*/
+
+.certificate-section {
+  padding: 6.4rem 0;
+}
+
+.certificate-section .heading-secondary {
+  margin-bottom: 4.8rem;
+}
+
+.certificate-section img {
+  width: 100%;
+}
+
+.cer-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #4a4a4a;
+  margin-bottom: 1.2rem;
+}
+
+.cer-text {
+  line-height: 1.6;
+}
+
+/* layout for content inside every certificate box */
+.cer-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+/* ./ */
+
+/* Make the vertical border */
+.certificates .col:nth-child(odd) .cer-box {
+  padding-right: 1.6rem;
+}
+
+.certificates .col:nth-child(even) .cer-box {
+  border-left: 2px solid #d6c08d;
+  padding-left: 1.6rem;
+}
+/* ./ */
+
+/* Make the horizontal border */
+.certificates .col {
+  border-bottom: 2px solid #d6c08d;
+  padding-bottom: 3.6rem;
+}
+
+.certificates .col:nth-child(odd):last-child,
+.certificates .col:nth-child(even):last-child,
+.certificates .col:nth-child(odd):nth-last-child(2) {
+  /* --> Chose {the last odd} OR {the last even AND the second last} 
+  --> Also means choosing the LAST ROW*/
+  border-bottom: none;
+  padding-bottom: 0;
+}
+/* ./ */
+
+/* ============================*/
+/* PROJECT */
+/* ============================*/
+
+.project-section {
+  padding: 6.4rem 0;
+}
+
+.project-section .heading-secondary {
+  margin-bottom: 3.6rem;
+}
+
+/* Each project is wrapped in an <a> tag, this helps to link to the project charter*/
+a.project-1,
+a.project-2,
+a.project-3 {
+  text-decoration: none;
+  color: inherit;
+}
+
+.img-box {
+  border: 2px solid #dedede;
+  border-bottom: none;
+}
+
+.project-name {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #4a4a4a;
+  padding: 1.6rem;
+}
+
+.project-info {
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: start;
+  gap: 1.6rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.project-info-year {
+  font-size: 1rem;
+  height: 2.2rem;
+  width: 4.8rem;
+
+  background-color: #199cdb;
+  color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-info i {
+  margin-right: 0.4rem;
+}
+
+.project-detail {
+  font-size: 1.4rem;
+  line-height: 1.6;
+
+  /* bootstrap already has border collapse for table */
+  /* border-collapse: collapse; */
+}
+
+.project-detail td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.8rem;
+}
+
+.project-detail td:first-child {
+  width: 30%;
+}
+
+/* make border for project box */
+
+.project-info {
+  border-top: 2px solid #dedede;
+}
+
+.project-detail td {
+  border-top: 2px solid #dedede;
+}
+
+.project-box-content {
+  border: 2px solid #dedede;
+}
+
+/* ============================*/
+/* FOOTER */
+/* ============================*/
+
+.footer .my-container {
+  padding: 3.6rem 0;
+  text-align: center;
+}
+
+.footer i {
+  font-size: 250%;
+  color: #47b0e2;
+  margin-right: 0.4rem;
+}
+
+.footer a:link,
+.footer a:visited {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #7c7c7c;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.8rem;
+  transition: all 0.3s;
+}
+
+.footer a:hover,
+.footer a:hover i {
+  color: #5ebae6;
+}
+
+/* ****************************** */
+/* CHARTER PAGE */
+/* ****************************** */
+
+/* Make charter page clickable */
+a.home-page-link {
+  text-decoration: none;
+  color: inherit;
+}
+/* ./ */
+
+.charter-page {
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.1);
+}
+
+.bg-color-2 {
+  background-color: #f4fdfe;
+}
+
+/* Style for the title of each part in the project charter */
+.charter-page div p:first-child:not(:last-child) {
+  color: #4a4a4a;
+}
+
+/* Style for the title of Scopes */
+.scopes h3 {
+  color: #4a4a4a;
+  font-weight: bold;
+}
+
+.charter-page .heading-secondary {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.charter-page ul {
+  list-style: none;
+}
+
+.charter-page p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.charter-page i {
+  font-size: 2rem;
+  color: #4a4a4a;
+}
+
+/* Goals */
+
+.goal-list-item {
+  display: flex;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+.goal-list-item i {
+  margin-left: 3.2rem;
+}
+
+/* Scopes */
+
+.scope-in-out {
+  margin-left: 1.6rem;
+}
+
+/* Team */
+
+.team-list-item {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-left: 1.6rem;
+}
+
+/* Timeline */
+
+.timeline-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9775fa;
+  color: #fff;
+  font-size: 1.6rem;
+  border: 1px solid #636363;
+
+  flex-shrink: 0;
+}
+
+.timeline-list-item {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-left: 1.6rem;
+}
+
+.timeline-list-item {
+  border-bottom: 1px dashed #dedede;
+}
+
+/* Primary */
+
+.primary-list-item {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-left: 1.6rem;
+}
